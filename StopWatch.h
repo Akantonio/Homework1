@@ -7,6 +7,7 @@
 
 
 class StopWatch {
+public:
     StopWatch();
 };
 
