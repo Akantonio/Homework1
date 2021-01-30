@@ -5,15 +5,19 @@
 #ifndef HOMEWORK1_STOPWATCH_H
 #define HOMEWORK1_STOPWATCH_H
 
+#include <chrono>
+#include <ctime>
 
 class StopWatch {
 public:
     StopWatch();
     void start();
-    void stop();
+    double stop();
 
 private:
-    double initial time;
+    std::chrono::steady_clock::time_point _initialTime;
+    double _startTime;
+    double _endTime;
 };
 
 

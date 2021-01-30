@@ -2,6 +2,7 @@
 #include "StopWatch.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    StopWatch theClock;
+
     return 0;
 }

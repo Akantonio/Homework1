@@ -4,7 +4,8 @@
 
 #include "StopWatch.h"
 
-StopWatch::StopWatch() {
+
+StopWatch::StopWatch():_initialTime(std::chrono::steady_clock::now()) {
 
 }
 
@@ -12,6 +13,6 @@ void StopWatch::start() {
 
 }
 
-void StopWatch::stop() {
-
+double StopWatch::stop() {
+    return 0;
 }
