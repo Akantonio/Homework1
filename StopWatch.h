@@ -8,10 +8,12 @@
 
 class StopWatch {
 public:
-
     StopWatch();
+    void start();
     void stop();
-    void end();
+
+private:
+    double initial time;
 };
 
 

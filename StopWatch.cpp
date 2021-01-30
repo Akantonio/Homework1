@@ -8,10 +8,10 @@ StopWatch::StopWatch() {
 
 }
 
-void StopWatch::stop() {
+void StopWatch::start() {
 
 }
 
-void StopWatch::start() {
+void StopWatch::stop() {
 
 }
