@@ -7,7 +7,7 @@
 
 
 class StopWatch {
-    StopWatch
+    StopWatch();
 };
 
 
