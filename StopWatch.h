@@ -8,7 +8,10 @@
 
 class StopWatch {
 public:
+
     StopWatch();
+    void stop();
+    void end();
 };
 
 

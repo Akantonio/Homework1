@@ -7,3 +7,11 @@
 StopWatch::StopWatch() {
 
 }
+
+void StopWatch::stop() {
+
+}
+
+void StopWatch::start() {
+
+}
