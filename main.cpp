@@ -1,4 +1,4 @@
-#include <iostream>
+
 #include "StopWatch.h"
 
 void testIng(){

@@ -5,6 +5,7 @@
 #ifndef HOMEWORK1_STOPWATCH_H
 #define HOMEWORK1_STOPWATCH_H
 
+#include <iostream>
 #include <chrono>
 #include <ctime>
 
@@ -15,7 +16,7 @@ public:
     double stop();
 
 private:
-    std::chrono::steady_clock::time_point _initialTime;
+    std::chrono::system_clock::time_point _initialTime;
     double _startTime;
     double _endTime;
 };
