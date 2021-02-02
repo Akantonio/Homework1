@@ -16,7 +16,7 @@ public:
     double stop();
 
 private:
-    std::chrono::system_clock::time_point _initialTime;
+    std::chrono::time_point<std::chrono::system_clock> _initialTime;
     double _startTime;
     double _endTime;
 };
