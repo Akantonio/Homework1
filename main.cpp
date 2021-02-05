@@ -1,6 +1,7 @@
 
 #include "StopWatch.h"
 #include <random>
+#include <algorithm>
 
 void testIng(){
     for(int i=0; i<1000; ++i){
@@ -19,6 +20,8 @@ void randomT(){
     std::cout << '\n';
 }
 
+void search(){
+
 }
 
 int main() {
@@ -31,6 +34,8 @@ int main() {
 
     theClock.start();
     randomT();
+    theClock.stop();
+    theClock.readTime(1);
 
     return 0;
 }
