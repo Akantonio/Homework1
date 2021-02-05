@@ -31,6 +31,8 @@ double StopWatch::readTime(int type) {
         duration = std::chrono::duration<double, std::milli>(diff).count();
         std::cout << "Time ends @ " << duration << " milliseconds." << std::endl;
 
+    }else {
+        std::cout<< "Error in Inputted type." <<std::endl;
     }
     return duration;
 }
