@@ -5,13 +5,14 @@
 #include "StopWatch.h"
 
 
-StopWatch::StopWatch():_initialTime(std::chrono::system_clock::now()) {
-
-    std::cout<<"Initial Time: "<< std::endl;
+StopWatch::StopWatch():_initialTime() {
+    std::cout<<"Program ";
+    start();
 }
 
 void StopWatch::start() {
-    std::cout<< "Time starts @ " << std::endl;
+    _initialTime= std::chrono::system_clock::now();
+    std::cout<< "Time starts " << std::endl;
 }
 
 double StopWatch::stop() {
