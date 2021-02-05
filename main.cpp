@@ -1,6 +1,7 @@
 
 #include "StopWatch.h"
 #include <random>
+#include <vector>
 #include <algorithm>
 
 void testIng(){
@@ -20,7 +21,10 @@ void randomT(){
     std::cout << '\n';
 }
 
-void search(){
+void search(int amount){
+    std::cout<<"Sequential search of 2 vectors" << amount <<std::endl;
+    std::vector<int> randomVector1{};
+    randomVector1.reserve(10);
 
 }
 
@@ -32,10 +36,6 @@ int main() {
     theClock.readTime(0);
     theClock.readTime(1);
 
-    theClock.start();
-    randomT();
-    theClock.stop();
-    theClock.readTime(1);
 
     return 0;
 }
