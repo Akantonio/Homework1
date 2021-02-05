@@ -16,7 +16,9 @@ void StopWatch::start() {
 }
 
 double StopWatch::stop() {
-    std::cout<< "Time ends @ " << std::endl;
+    _endTime = std::chrono::system_clock::now();
+    auto diff = _endTime-_initialTime;
+    std::cout<< "Time ends @ " << std::chrono::duration<double> (diff).count() << std::endl;
 
     return 0;
 }
