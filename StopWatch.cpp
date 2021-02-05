@@ -15,10 +15,25 @@ void StopWatch::start() {
     std::cout<< "Time starts " << std::endl;
 }
 
-double StopWatch::stop() {
+void StopWatch::stop() {
     _endTime = std::chrono::system_clock::now();
-    auto diff = _endTime-_initialTime;
-    std::cout<< "Time ends @ " << std::chrono::duration<double> (diff).count() << std::endl;
+    readTime();
+}
 
-    return 0;
+double StopWatch::readTime(StopWatch::DurationFormat) {
+    double duration=0;
+    auto diff = _endTime-_initialTime;
+    switch (StopWatch::DurationFormat) {
+        case SECONDS:
+            std::cout<< "Time ends @ " << std::chrono::duration<double> (diff).count() << " seconds."<< std::endl;
+            duration= std::chrono::duration<double> (diff).count();
+            break;
+        case MILLISECONDS:
+            std::cout<< "Time ends @ " << std::chrono::duration<double> (diff).count() << " seconds."<< std::endl;
+            duration= std::chrono::duration<double,std::milli> (diff).count();
+            break;
+        default:
+            break;
+    }
+    return duration;
 }

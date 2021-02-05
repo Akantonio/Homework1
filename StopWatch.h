@@ -12,9 +12,11 @@
 
 class StopWatch {
 public:
+    enum DurationFormat {SECONDS, MILLISECONDS};
     StopWatch();
     void start();
-    double stop();
+    void stop();
+    double readTime(DurationFormat);
 
 private:
     std::chrono::time_point<std::chrono::system_clock> _initialTime;
