@@ -20,14 +20,13 @@ void StopWatch::stop() {
 }
 
 void StopWatch::readTime(int type) {
-    double duration=0;
+    double duration;
     auto diff = _endTime-_initialTime;
     if(type==0) {
         duration = std::chrono::duration<double>(diff).count();
         std::cout << "Time ends @ " << duration << " seconds." << std::endl;
         _storedTime=duration;
-    }
-    if(type==1) {
+    }else if(type==1) {
         duration = std::chrono::duration<double, std::milli>(diff).count();
         std::cout << "Time ends @ " << duration << " milliseconds." << std::endl;
         _storedTime=duration;
