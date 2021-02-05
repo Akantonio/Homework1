@@ -17,18 +17,17 @@ int randomInt(int minimum,int maximum){
     return dis(gen);
 }
 
-void searchAlgorithm(int amount){
-    std::cout<<"Sequential search of 2 vectors " << amount <<std::endl;
-    std::vector<int> randomVector1;
-    randomVector1.reserve(10);
 
-}
 
 int main() {
+    //Time It I
     StopWatch theClock;
 
-
-
+    std::vector<int> randomVector;
+    randomVector.reserve(10);
+    for(auto & i:randomVector){
+        i.push_back(randomInt(1,10));
+    }
 
     searchAlgorithm(4);
 
