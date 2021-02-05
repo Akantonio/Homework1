@@ -3,6 +3,7 @@
 #include <random>
 #include <vector>
 #include <algorithm>
+#include <string>
 #include <fstream>
 
 void testIng(){
@@ -20,7 +21,7 @@ int randomInt(int minimum,int maximum){
     return dis(gen);
 }
 
-void search(int amount){
+void searchAlgorithm(int amount){
     std::cout<<"Sequential search of 2 vectors " << amount <<std::endl;
     std::vector<int> randomVector1;
     randomVector1.reserve(10);
@@ -36,13 +37,21 @@ int main() {
     theClock.readTime(0);
     theClock.readTime(1);
 
-    search(4);
+    searchAlgorithm(4);
 
     //Gutenberg Book
+    std::string bookLine;
     std::fstream fInput;
     fInput.open("../174.txt");
     if(!fInput){
         std::cout<<"Could not read File!" << std::endl;
     }
+    theClock.start();
+    while(std::getline(fInput,bookLine)){
+        std::cout << bookLine <<std::endl;
+    }
+    theClock.stop();
+    theClock.readTime(0);
+
     return 0;
 }
