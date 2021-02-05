@@ -25,8 +25,8 @@ int main() {
 
     std::vector<int> randomVector;
     randomVector.reserve(10);
-    for(auto & i:randomVector){
-        i.push_back(randomInt(1,10));
+    for(int i=0;i<10;++i){
+        randomVector.push_back(randomInt(1,10));
     }
 
 
