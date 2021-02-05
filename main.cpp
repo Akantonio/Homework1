@@ -12,6 +12,8 @@ int main() {
     theClock.start();
     testIng();
     theClock.stop();
+    theClock.readTime(0);
+    theClock.readTime(1);
 
     return 0;
 }

@@ -17,23 +17,20 @@ void StopWatch::start() {
 
 void StopWatch::stop() {
     _endTime = std::chrono::system_clock::now();
-    readTime();
 }
 
-double StopWatch::readTime(StopWatch::DurationFormat) {
+double StopWatch::readTime(int type) {
     double duration=0;
     auto diff = _endTime-_initialTime;
-    switch (StopWatch::DurationFormat) {
-        case SECONDS:
-            std::cout<< "Time ends @ " << std::chrono::duration<double> (diff).count() << " seconds."<< std::endl;
-            duration= std::chrono::duration<double> (diff).count();
-            break;
-        case MILLISECONDS:
-            std::cout<< "Time ends @ " << std::chrono::duration<double> (diff).count() << " seconds."<< std::endl;
-            duration= std::chrono::duration<double,std::milli> (diff).count();
-            break;
-        default:
-            break;
+    if(type==0) {
+        duration = std::chrono::duration<double>(diff).count();
+        std::cout << "Time ends @ " << duration << " seconds." << std::endl;
+
+    }
+    if(type==1) {
+        duration = std::chrono::duration<double, std::milli>(diff).count();
+        std::cout << "Time ends @ " << duration << " milliseconds." << std::endl;
+
     }
     return duration;
 }
