@@ -17,7 +17,17 @@ int randomInt(int minimum,int maximum){
     return dis(gen);
 }
 
+void search(std::vector<int> & data){
+    std::vector<int> parameter{3,4,5,6}; //search parameters
+    std::vector<int>::iterator intPoint;
 
+    intPoint= std::search(data.begin(), data.end(), parameter.begin(), parameter.end());
+    if(intPoint != data.end()){
+        std::cout<<"Parameter is in the Data "<<(intPoint - data.begin())<<"\n";
+    }else{
+        std::cout<<" Parameter is not present in Data\n";
+    }
+}
 
 int main() {
     //Time It I
@@ -29,9 +39,12 @@ int main() {
         randomVector.push_back(randomInt(1,10));
     }
 
+    theClock.start();
+    search(randomVector);
+    theClock.stop();
+    theClock.readTime(1);
 
-
-    //Gutenberg Book
+    //Gutenberg
     std::string bookLine;
     std::fstream fInput;
     fInput.open("../174.txt");
@@ -40,7 +53,7 @@ int main() {
     }
     theClock.start();
     while(std::getline(fInput,bookLine)){
-        std::cout << bookLine <<std::endl;
+        //std::cout << bookLine <<std::endl;
     }
     theClock.stop();
     theClock.readTime(0);
