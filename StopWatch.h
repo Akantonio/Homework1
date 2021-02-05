@@ -15,11 +15,12 @@ public:
     StopWatch();
     void start();
     void stop();
-    double readTime(int type);
-
+    void readTime(int type);
+    double getReadTime();
 private:
     std::chrono::time_point<std::chrono::system_clock> _initialTime;
     std::chrono::time_point<std::chrono::system_clock> _endTime;
+    double _storedTime=0;
 };
 
 

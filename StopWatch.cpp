@@ -19,20 +19,23 @@ void StopWatch::stop() {
     _endTime = std::chrono::system_clock::now();
 }
 
-double StopWatch::readTime(int type) {
+void StopWatch::readTime(int type) {
     double duration=0;
     auto diff = _endTime-_initialTime;
     if(type==0) {
         duration = std::chrono::duration<double>(diff).count();
         std::cout << "Time ends @ " << duration << " seconds." << std::endl;
-
+        _storedTime=duration;
     }
     if(type==1) {
         duration = std::chrono::duration<double, std::milli>(diff).count();
         std::cout << "Time ends @ " << duration << " milliseconds." << std::endl;
-
+        _storedTime=duration;
     }else {
         std::cout<< "Error in Inputted type." <<std::endl;
     }
-    return duration;
+}
+
+double StopWatch::getReadTime() {
+    return _storedTime;
 }
