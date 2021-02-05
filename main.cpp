@@ -10,20 +10,18 @@ void testIng(){
     }
 }
 
-void randomT(){
+int randomInt(int minimum,int maximum){
+
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(1, 6);
+    std::uniform_int_distribution<> dis(minimum, maximum);
 
-    for (int n=0; n<10; ++n)
-
-        std::cout << dis(gen) << ' ';
-    std::cout << '\n';
+    return dis(gen);
 }
 
 void search(int amount){
     std::cout<<"Sequential search of 2 vectors" << amount <<std::endl;
-    std::vector<int> randomVector1{};
+    std::vector<int> randomVector1;
     randomVector1.reserve(10);
 
 }
@@ -36,6 +34,7 @@ int main() {
     theClock.readTime(0);
     theClock.readTime(1);
 
+    search(4);
 
     return 0;
 }
