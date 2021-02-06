@@ -18,7 +18,7 @@ int randomInt(int minimum,int maximum){
 }
 
 void search(std::vector<int> & data,StopWatch & clockT){
-    std::vector<int> parameter{3,4,5}; //search parameters
+    std::vector<int> parameter{3}; //search parameters
     std::vector<int>::iterator intPoint;
     clockT.start();
     intPoint= std::search(data.begin(), data.end(), parameter.begin(), parameter.end());
@@ -58,6 +58,13 @@ void timingVectors(int capacity,StopWatch & clockT){
     //using std::binary_search
     std::cout<<"-Binary Search-"<<std::endl;
     binarySearch(randomVector,clockT);
+
+    //using std::sort
+    std::cout<<"-Sort-"<<std::endl;
+    clockT.start();
+    std::sort(randomVector.begin(),randomVector.end());
+    clockT.stop();
+    clockT.readTime(1);
 }
 
 void gutenberg(std::string fileName,StopWatch clockW){
