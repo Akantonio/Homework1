@@ -98,6 +98,10 @@ int main() {
 
     //Time It II  -- Gutenberg
     gutenberg("174.txt",theClock);
+    gutenberg("219-0.txt",theClock);
+    gutenberg("1080-0.txt",theClock);
+    gutenberg("pg3207.txt",theClock);
+    gutenberg("pg22668.txt",theClock);
 
     return 0;
 }
