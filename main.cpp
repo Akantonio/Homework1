@@ -35,18 +35,16 @@ void binarySearch(std::vector<int> & data,StopWatch & clockT){
     clockT.start();
     if(std::binary_search(data.begin(),data.end(),3)){
         clockT.stop();
+        clockT.readTime(1);
         std::cout<<"Found a 3! \n";
     } else{
         clockT.stop();
+        clockT.readTime(1);
         std::cout<<"Did not Find a 3!\n";
     }
 }
 
-int main() {
-    //Time It I
-    StopWatch theClock;
-
-    int capacity=100;
+void timingVectors(int capacity,StopWatch & clockT){
     std::vector<int> randomVector;
     randomVector.reserve(capacity);
     for(int i=0; i < capacity; ++i){
@@ -55,15 +53,25 @@ int main() {
 
     //using std::search
     std::cout<<"-Search-"<<std::endl;
-
-    search(randomVector,theClock);
-
+    search(randomVector,clockT);
 
     //using std::binary_search
     std::cout<<"-Binary Search-"<<std::endl;
+    binarySearch(randomVector,clockT);
+}
 
-    binarySearch(randomVector,theClock);
+int main() {
+    //Time It I
+    StopWatch theClock;
 
+    std::cout<<"Vector with 100 inside" <<std::endl;
+    timingVectors(100,theClock);
+    std::cout<<"Vector with 1000 inside" <<std::endl;
+    timingVectors(1000,theClock);
+    std::cout<<"Vector with 10000 inside" <<std::endl;
+    timingVectors(10000,theClock);
+    std::cout<<"Vector with 100000 inside" <<std::endl;
+    timingVectors(100000,theClock);
 
     //Gutenberg
     std::string bookLine;
@@ -75,7 +83,7 @@ int main() {
     std::cout<<" -String- "<<std::endl;
     theClock.start();
     while(std::getline(fInput,bookLine)){
-        std::cout << bookLine <<std::endl;
+        //std::cout << bookLine <<std::endl;
     }
     theClock.stop();
     theClock.readTime(1);
