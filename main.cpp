@@ -60,6 +60,29 @@ void timingVectors(int capacity,StopWatch & clockT){
     binarySearch(randomVector,clockT);
 }
 
+void gutenberg(std::string fileName,StopWatch clockW){
+    std::string bookLine;
+    std::fstream fInput;
+    fInput.open(("../"+fileName));
+    if(!fInput){
+        std::cout<<"Could not read File!" << std::endl;
+    }
+    std::cout<<" -String- "<<std::endl;
+    clockW.start();
+    while(std::getline(fInput,bookLine)){
+        //std::cout << bookLine <<std::endl;
+    }
+    clockW.stop();
+    clockW.readTime(1);
+
+    std::cout<<" -Vector- "<<std::endl;
+    std::vector<std::string> bookCase;
+    while(std::getline(fInput,bookLine)){
+        bookCase.push_back(bookLine);
+    }
+
+}
+
 int main() {
     //Time It I
     StopWatch theClock;
@@ -73,21 +96,8 @@ int main() {
     std::cout<<"Vector with 100000 inside" <<std::endl;
     timingVectors(100000,theClock);
 
-    //Gutenberg
-    std::string bookLine;
-    std::fstream fInput;
-    fInput.open("../174.txt");
-    if(!fInput){
-        std::cout<<"Could not read File!" << std::endl;
-    }
-    std::cout<<" -String- "<<std::endl;
-    theClock.start();
-    while(std::getline(fInput,bookLine)){
-        //std::cout << bookLine <<std::endl;
-    }
-    theClock.stop();
-    theClock.readTime(1);
-
+    //Time It II  -- Gutenberg
+    gutenberg("174.txt",theClock);
 
     return 0;
 }
