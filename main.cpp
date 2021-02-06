@@ -67,6 +67,7 @@ void gutenberg(std::string fileName,StopWatch clockW){
     if(!fInput){
         std::cout<<"Could not read File!" << std::endl;
     }
+    std::cout<< fileName <<std::endl;
     std::cout<<" -String- "<<std::endl;
     clockW.start();
     while(std::getline(fInput,bookLine)){
@@ -77,10 +78,12 @@ void gutenberg(std::string fileName,StopWatch clockW){
 
     std::cout<<" -Vector- "<<std::endl;
     std::vector<std::string> bookCase;
+    clockW.start();
     while(std::getline(fInput,bookLine)){
         bookCase.push_back(bookLine);
     }
-
+    clockW.stop();
+    clockW.readTime(1);
 }
 
 int main() {
@@ -95,6 +98,10 @@ int main() {
     timingVectors(10000,theClock);
     std::cout<<"Vector with 100000 inside" <<std::endl;
     timingVectors(100000,theClock);
+    std::cout<<"Vector with 1000000 inside" <<std::endl;
+    timingVectors(1000000,theClock);
+    std::cout<<"Vector with 10000000 inside" <<std::endl;
+    timingVectors(10000000,theClock);
 
     //Time It II  -- Gutenberg
     gutenberg("174.txt",theClock);
