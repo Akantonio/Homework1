@@ -90,6 +90,8 @@ int main() {
     //Time It I
     StopWatch theClock;
 
+    std::cout<<"Vector with 10 inside" <<std::endl;
+    timingVectors(10,theClock);
     std::cout<<"Vector with 100 inside" <<std::endl;
     timingVectors(100,theClock);
     std::cout<<"Vector with 1000 inside" <<std::endl;
